@@ -36,6 +36,8 @@ WorkingDirectory=/opt/n8n
 ExecStart=/usr/bin/n8n start
 Restart=on-failure
 RestartSec=10
+Environment="WEBHOOK_URL=https://${domain}"
+Environment="N8N_PROXY_HOPS=1"
 
 [Install]
 WantedBy=multi-user.target
